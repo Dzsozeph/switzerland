@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> J.J holiday - CH Destinations and Hotels checking lists</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+			position: relative;
+        }
+        body {
+            display: flex;
+			width: 100vw;
+            height: 100vh;
+        }
+        aside {
+            width: 25%;
+			/*
+            background: rgba(26,34,23,0.4);*/
+background: rgb(120,124,119);
+background: linear-gradient(127deg, rgba(120,124,119,1) 9%, rgba(126,126,126,1) 30%, rgba(231,222,222,1) 59%, rgba(255,255,255,1) 91%);
+            color: white;
+            padding: 50px;
+            overflow-y: auto;
+		
+        }
+        main {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("switzerlandplan2.PNG");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		
+			
+        }
+        ul {
+            list-style: none;
+			padding: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+		
+		h1{
+			
+			text-align: center;
+			margin-top: -3vh;
+			text-shadow: 0 0 10px white;
+			color: black;
+			
+			
+		}
+        .submenu {
+			position: relative;
+            display: none;
+            padding-left: 10px;
+			background: rgba(39,58,85,0.4);
+			margin-top: 3vh;
+        }
+		
+        .toggle {
+			position: relative;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            background: #34495e;
+            border-radius: 5px;
+			top: 3vh;
+			
+			
+        }
+        .toggle:hover {
+            background: rgba(26,32,47,1.00);
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .marker {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(208,133,38,0.35);
+            border-radius: 50%;
+			display: none;
+			box-shadow: 0 0 30px white;
+          
+        }
+		
+		.info{
+			position: fixed;
+			display: flex;
+			background-image: url("info2.png");
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			width: 18vw;
+			height: 15vh;
+			bottom: -5vh;
+			right: 0;
+		
+			
+		}
+		
+		.hotspot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+.highlight {
+background: rgb(120,24,24);
+background: linear-gradient(180deg, rgba(120,24,24,1) 19%, rgba(64,29,29,1) 59%);
+
+	box-shadow:  0 0 20px white;
+}
+		
+		.logo2{
+			display: flex;
+			position: relative;
+			background-image: url("q.png");
+			background-size: cover;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			width: 300px;
+			height: 100px;
+			bottom: -40vh;
+		}
+		
+		.logo{
+			position: relative;
+			background-image: url("switzlogo.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 350px;
+			height: 200px;
+			
+			text-align: center;
+			margin-left: -1.4vw;
+			
+			
+		}
+		
+		.signature{
+			display:flex;
+			position: relative;
+			background-image: url("signature.png");
+			background-size: cover;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 100px;
+			bottom: -35vh;
+			margin: 0 auto;
+			
+		}
+    </style>
+</head>
+<body>
+		
+    <aside>
+	<h1>Switzerland</h1>
+	<div class="logo"></div>
+        <ul>
+             <li>
+                <span class="toggle">Planning</span>
+                <ul class="submenu">
+                    <li data-marker="328, 16"><label><input type="checkbox" data-id="1-1"> Day 1. BE  CH Murten</label></li>
+                    <li data-marker="487, 108"><label><input type="checkbox" data-id="1-2"> Day 2-3. Brenz  Leukerbad (Spa and Wellness, Therme)</label></li>
+					 <li data-marker="260, 548"><label><input type="checkbox" data-id="1-2"> Day 3 Leukerbad (Spa and Wellness, Therme)</label></li>
+                    <li data-marker="94, 890"><label><input type="checkbox" data-id="1-3"> Day 4. Zermatt - Gornergat - Rothorn - Turtmannsee</label></li>
+                    <li data-marker="625, 486"><label><input type="checkbox" data-id="1-4"> Day 5. Grindelwald - Lauterbrunnen</label></li>
+                    <li data-marker="737, 414"><label><input type="checkbox" data-id="1-5"> Day 6. Interlaken - Brienz- Innerkirchen</label></li>
+					<li data-marker="950, 271"><label><input type="checkbox" data-id="1-6"> Day 7. Pilatus mountain - Isenthal nearby areas</label></li>
+					<li data-marker="1270, 380"><label><input type="checkbox" data-id="1-7"> Day 8. Euthal - Wildspitz -Amden</label></li>
+                </ul>
+            </li>
+              <li>
+                <span class="toggle">Accomodations</span>
+                <ul class="submenu">
+                    <li><label><input type="checkbox" data-id="2-1"> May 4. SeePark Hotel / Murten</label></li>
+                    <li><label><input type="checkbox" data-id="2-2"> May 5-6. Haus Crystal / Leukerbad</label></li>
+                    <li><label><input type="checkbox" data-id="2-3"> May 7. Hotel Alpina / Kandersteg,</label></li>
+                    <li><label><input type="checkbox" data-id="2-4"> May 8. Hotel Hornerpub / Lauterbrunnen</label></li>
+                    <li><label><input type="checkbox" data-id="2-5"> May 9-11. Hotel-Restaurant Alpina / Innerkirtchen </label></li>
+					<li><label><input type="checkbox" data-id="2-6"> May 11. Hotel Alpenblick / Muotathal</label></li>
+					
+                </ul>
+            </li>
+            <li>
+                <span class="toggle">Trekking Trails</span>
+                <ul class="submenu">
+                    
+                </ul>
+            </li>
+        </ul>
+		<div class="info"></div>
+		<div class="logo2"></div>
+		<div class="signature"></div>
+    </aside>
+    <main>
+       <div class="marker" id="marker"></div>
+    </main>
+     <script>
+		 
+document.addEventListener("DOMContentLoaded", () => {
+    const marker = document.getElementById("marker");
+
+    document.querySelectorAll(".toggle").forEach(toggle => {
+        toggle.addEventListener("click", () => {
+            const submenu = toggle.nextElementSibling;
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        });
+    });
+
+    document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
+        const id = checkbox.dataset.id;
+        checkbox.checked = localStorage.getItem(id) === "true";
+        checkbox.addEventListener("change", () => {
+            localStorage.setItem(id, checkbox.checked);
+        });
+    });
+
+    // Ha egy menüelemre viszed az egeret -> a térképen megjelenik a marker
+    document.querySelectorAll("aside li").forEach(li => {
+        li.addEventListener("mouseenter", () => {
+            if (li.dataset.marker) {
+                const [x, y] = li.dataset.marker.split(",").map(Number);
+                marker.style.left = `${x}px`;
+                marker.style.top = `${y}px`;
+                marker.style.display = "block";
+                li.classList.add("highlight"); // Menüelem kiemelése
+            }
+        });
+
+        li.addEventListener("mouseleave", () => {
+            marker.style.display = "none";
+            li.classList.remove("highlight"); // Kiemelés eltüntetése
+        });
+    });
+
+    // Ha a térképen egy pontra viszed az egeret -> a megfelelő menüelem is kiemelődik
+    document.querySelectorAll("li[data-marker]").forEach(li => {
+        const [x, y] = li.dataset.marker.split(",").map(Number);
+        const hotspot = document.createElement("div");
+        hotspot.classList.add("hotspot");
+        hotspot.style.left = `${x}px`;
+        hotspot.style.top = `${y}px`;
+        document.querySelector("main").appendChild(hotspot);
+
+        hotspot.addEventListener("mouseenter", () => {
+            marker.style.left = `${x}px`;
+            marker.style.top = `${y}px`;
+            marker.style.display = "block";
+            li.classList.add("highlight");
+        });
+
+        hotspot.addEventListener("mouseleave", () => {
+            marker.style.display = "none";
+            li.classList.remove("highlight");
+        });
+    });
+});
+		 
+		 document.querySelector("main").addEventListener("click", (event) => {
+    const x = event.offsetX;
+    const y = event.offsetY;
+    console.log(`Klikk koordináták: ${x}, ${y}`);
+});
+		 
+		 document.addEventListener("DOMContentLoaded", () => {
+    const map = document.querySelector("main"); // A térkép (háttérkép)
+    const coordDisplay = document.createElement("div"); // Új div az infónak
+
+    // Stílus hozzáadása az infó dobozhoz
+    coordDisplay.style.position = "fixed";
+    coordDisplay.style.background = "rgba(0, 0, 0, 0.7)";
+    coordDisplay.style.color = "white";
+    coordDisplay.style.padding = "5px 10px";
+    coordDisplay.style.borderRadius = "5px";
+    coordDisplay.style.fontSize = "14px";
+    coordDisplay.style.display = "none";
+    document.body.appendChild(coordDisplay);
+
+    // Egérmozgás figyelése
+    map.addEventListener("mousemove", (event) => {
+        const rect = map.getBoundingClientRect(); // Térkép mérete és pozíciója
+        const absX = event.clientX - rect.left; // Abszolút X koordináta
+        const absY = event.clientY - rect.top;  // Abszolút Y koordináta
+
+        // Százalékos értékek kiszámítása
+        const relX = ((absX / rect.width) * 100).toFixed(2);
+        const relY = ((absY / rect.height) * 100).toFixed(2);
+
+        // Kiírás a képernyőre
+        coordDisplay.innerHTML = `X: ${absX}px (${relX}%)<br>Y: ${absY}px (${relY}%)`;
+        coordDisplay.style.left = `${event.clientX + 10}px`; // Pozicionálás
+        coordDisplay.style.top = `${event.clientY + 10}px`;
+        coordDisplay.style.display = "block";
+    });
+
+    // Ha elhagyja az egeret a térképről, tüntesse el a koordináta infót
+    map.addEventListener("mouseleave", () => {
+        coordDisplay.style.display = "none";
+    });
+});
+    </script>
+</body>
+</html>
