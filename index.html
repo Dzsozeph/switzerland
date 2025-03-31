@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Jonas holiday - CH Destinations and Hotels checking lists</title>
     <style>
+		
+		
+		@keyframes slideInLeft {
+    from {
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+		
         * {
             margin: 0;
             padding: 0;
@@ -86,8 +99,8 @@
         }
         .marker {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 70px;
+            height: 70px;
             background: rgba(208,133,38,0.35);
             border-radius: 50%;
 			display: none;
@@ -107,6 +120,7 @@
 			height: 15vh;
 			bottom: -5vh;
 			right: 0;
+			animation: slideInLeft 2s ease-out forwards;
 		
 			
 		}
