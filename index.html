@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Hind+Mysuru:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Prata&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title> Jonas holiday - CH Destinations and Hotels checking lists</title>
     <style>
 		
@@ -24,21 +27,24 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
 			position: relative;
+			
         }
         body {
             display: flex;
 			width: 100vw;
             height: 100vh;
+		
         }
         aside {
             width: 25%;
 			/*
             background: rgba(26,34,23,0.4);*/
-            background: rgb(120,124,119);
-            background: linear-gradient(127deg, rgba(120,124,119,1) 9%, rgba(126,126,126,1) 30%, rgba(231,222,222,1) 59%, rgba(255,255,255,1) 91%);
+background: rgb(0,142,255);
+background: linear-gradient(180deg, rgba(0,142,255,1) 14%, rgba(180,117,66,1) 33%, rgba(120,124,119,1) 49%, rgba(255,255,255,1) 93%);
             color: white;
             padding: 50px;
             overflow-y: auto;
+			
 		
         }
         main {
@@ -74,14 +80,23 @@
 			
 			text-align: center;
 			margin-top: -3vh;
-			text-shadow: 0 0 10px white;
-			color: black;
+			text-shadow: 0 0 10px black;
+			color: white;
 			
 			
 		}
 		
+		checkbox{
+			
+		}
+		.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 		.days{
-			color: #8EA526;
+			color: rgba(58,185,33,1.00);
 			font-weight: 600;
 			text-shadow: 0 0 6px black;
 		}
@@ -97,7 +112,7 @@
             padding-left: 10px;
 			background: rgba(39,58,85,0.4);
 			margin-top: 3vh;
-            transition: transform 2s ease; /* Animáció hozzáadása */
+			
         }
 		
         .toggle {
@@ -109,6 +124,7 @@
             background: #34495e;
             border-radius: 5px;
 			top: 3vh;
+			
 		
 			
 			
@@ -216,10 +232,11 @@
   height: 70vh;
   display: none;
   border-radius: 8px;
-  box-shadow: 0 0 300px white;
+  box-shadow: 0 0 300px black;
   z-index: 2;
   background-size: cover;
   background-position: center;
+
 	
 }
 		
@@ -236,6 +253,73 @@
 ul li:hover .submenu {
     display: block; /* Megjelenítjük a submenu-t */
 }
+		
+.popup-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 2;
+}
+		
+.hover-image:hover .popup-background {
+  display: block;
+}
+		
+		.noto-serif-font {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+		
+		.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+}
+
+.custom-checkbox input {
+  display: none; /* Eredeti checkbox elrejtése */
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Ha be van jelölve */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Pipa ikon hozzáadása */
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
     </style>
 </head>
 <body>
@@ -247,14 +331,14 @@ ul li:hover .submenu {
              <li>
                 <span class="toggle">Planning</span>
                 <ul class="submenu">
-                    <li data-marker="328, 16"><label><input type="checkbox" data-id="1-1"><span class="days">Day 1</span>  <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg" alt="Belgium Flag" width="20"> BE <span style="font-weight: 700;">Poppel</span> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="Switzerland Flag" width="20"> CH <span style="font-weight: 700;">Murten</span></label></li>
-                    <li data-marker="487, 108"><label><input type="checkbox" data-id="1-2"><span class="days">Day 2-3</span> Brenz  Leukerbad (Spa and Wellness, Therme)</label></li>
-					 <li data-marker="260, 548"><label><input type="checkbox" data-id="1-2"><span class="days">Day 3</span> Leukerbad (Spa and Wellness, Therme)</label></li>
-                    <li data-marker="94, 890"><label><input type="checkbox" data-id="1-3"> <span class="days">Day 5</span> Zermatt - Gornergat - Rothorn - Turtmannsee</label></li>
-                    <li data-marker="625, 486"><label><input type="checkbox" data-id="1-4"> <span class="days">Day 5</span> Grindelwald - Lauterbrunnen</label></li>
-                    <li data-marker="737, 414"><label><input type="checkbox" data-id="1-5"> <span class="days">Day 6</span> Interlaken - Brienz- Innerkirchen</label></li>
-					<li data-marker="950, 271"><label><input type="checkbox" data-id="1-6"> <span class="days">Day 7</span> Pilatus mountain - Isenthal nearby areas</label></li>
-					<li data-marker="1270, 380"><label><input type="checkbox" data-id="1-7"> <span class="days">Day 8</span> Euthal - Wildspitz -Amden</label></li>
+                    <li data-marker="328, 16"><label><input type="checkbox" data-id="1-1"><span class="days noto-serif-font">Day 1</span>  <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg" alt="Belgium Flag" width="20"> BE <span style="font-weight: 700;">Poppel</span> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="Switzerland Flag" width="20"> CH <span style="font-weight: 700; text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;" >Murten</span></label></li>
+                    <li data-marker="487, 108"><label><input type="checkbox" data-id="1-2"><span class="days noto-serif-font">Day 2-3</span><span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Brenz </span>  Leukerbad (Spa and Wellness, Therme)</label></li>
+					 <li data-marker="260, 548"><label><input type="checkbox" data-id="1-2"><span class="days noto-serif-font">Day 3</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Leukerbad </span>(Spa and Wellness, Therme)</label></li>
+                    <li data-marker="94, 890"><label><input type="checkbox" data-id="1-3"> <span class="days noto-serif-font">Day 5</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;"> Zermatt - Gornergat - Rothorn - Turtmannsee </span></label></li>
+                    <li data-marker="625, 486"><label><input type="checkbox" data-id="1-4"> <span class="days noto-serif-font">Day 5</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Grindelwald - Lauterbrunnen</span></label></li>
+                    <li data-marker="737, 414"><label><input type="checkbox" data-id="1-5"> <span class="days noto-serif-font">Day 6</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Interlaken - Brienz- Innerkirchen</span></label></li>
+					<li data-marker="950, 271"><label><input type="checkbox" data-id="1-6"> <span class="days noto-serif-font">Day 7</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Pilatus mountain - Isenthal nearby areas</span></label></li>
+					<li data-marker="1270, 380"><label><input type="checkbox" data-id="1-7"> <span class="days noto-serif-font">Day 8</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Euthal - Wildspitz -Amden</span></label></li>
                 </ul>
             </li>
               <li>
@@ -267,34 +351,37 @@ ul li:hover .submenu {
                    <li class="hover-image">
     <label>
       <input type="checkbox" data-id="2-1">
-      <span class="days2">May 4</span> SeePark Hotel / <span style="font-weight: 700;">Murten</span>
+      <span class="days2">May 4</span> SeePark Hotel / <span style="font-weight: 700; color: rgba(24,229,255,1.00); font-style: italic; text-decoration: underline;" class="noto-serif-font; ">Murten</span>
     </label>
-    <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/645801891.jpg?k=4af5febc1bd18de0d573f18327a5fed0ed08e6bc3a67d5e0b765bd74aa58f9f7&o=&hp=1" alt="SeePark Hotel" class="popup-image">
+	 <div class="popup-background"></div>
+    <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/239933304.jpg?k=7b7ce0ab487099f9210b35a06c83db1eeb201b50c22ade061d8b97b604a35caf&o=&hp=1" alt="SeePark Hotel" class="popup-image">
   </li>
-                   <li class="hover-image"><label><input type="checkbox" data-id="2-2"><span class="days2">May 5-6</span> Haus Crystal / <span style="font-weight: 700;">Leukerbad</span></label>
+                   <li class="hover-image"><label><input type="checkbox" data-id="2-2"><span class="days2 noto-serif-font">May 5-6</span> Haus Crystal / <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Leukerbad</span></label>
+					   <div class="popup-background"></div>
 						
 					  <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/449013091.jpg?k=e6b40df96ff4ecc2d443e3ad4838c6ffcd88f50ef26a0935d4bbb6cf1e3539c6&o=&hp=1" alt="SeePark Hotel" class="popup-image">
   </li>
 				
-                    <li class="hover-image"><label><input type="checkbox" data-id="2-3"><span class="days2"> May 7</span> Hotel Alpina / <span style="font-weight: 700;">Kandersteg</span>
+                    <li class="hover-image"><label><input type="checkbox" data-id="2-3"><span class="days2 noto-serif-font"> May 7</span> Hotel Alpina / <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Kandersteg</span>
 						
 						</label>
+						<div class="popup-background"></div>
 						<img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/69510914.jpg?k=773bb751dbf4eed7ced85e238ac6263ebfee89044dc162eeec6df90b798f2c2e&o=&hp=1" alt="SeePark Hotel" class="popup-image">
   </li>
 			
 			
-                    <li class="hover-image"><label><input type="checkbox" data-id="2-4"><span class="days2"> May 8</span> Hotel Hornerpub /<span style="font-weight: 700;"> Lauterbrunnen</span></label>
-						
+                    <li class="hover-image"><label><input type="checkbox" data-id="2-4"><span class="days2 noto-serif-font2 noto-serif-font"> May 8</span> Hotel Hornerpub /<span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;"> Lauterbrunnen</span></label>
+						<div class="popup-background"></div>
 					<img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/158185990.jpg?k=9dbb7c29753f5b1820af6bdcb5eb36c00cf50d56a0cc3e9e9a9532033cc8ea2b&o=&hp=1" alt="SeePark Hotel" class="popup-image">
   </li>
-                    <li class="hover-image"><label><input type="checkbox" data-id="2-5"><span class="days2">May 9-11</span> Hotel-Restaurant Alpina / <span style="font-weight: 700;">Innerkirtchen</span> </label>
-					
+                    <li class="hover-image"><label><input type="checkbox" data-id="2-5"><span class="days2 noto-serif-font">May 9-11</span> Hotel Alpina / <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Innerkirtchen</span> </label>
+					<div class="popup-background"></div>
 					<img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/341350535.jpg?k=41f11bcb7269302049398ea74f70030de1ec974884680104bdfed1c47f246442&o=&hp=1" alt="SeePark Hotel" class="popup-image">
   </li>
-					<li class="hover-image"><label><input type="checkbox" data-id="2-6"><span class="days2"> May 11</span> Hotel Alpenblick / <span style="font-weight: 700;">Muotathal</span>
+					<li class="hover-image"><label><input type="checkbox" data-id="2-6"><span class="days2 noto-serif-font2"> May 11</span> Hotel Alpenblick / <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Muotathal</span>
 						
 						</label>
-					
+					<div class="popup-background"></div>
 					<img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/134490293.jpg?k=2e11886f88101b1c2fc856aab9f824c826bd4c9b5e28cda712e7aea12a1344dd&o=&hp=1" alt="SeePark Hotel" class="popup-image">
 					
 					</li>
@@ -311,6 +398,7 @@ ul li:hover .submenu {
 		<div class="info"></div>
 		<div class="logo2"></div>
 		<div class="signature"></div>
+		
     </aside>
     <main>
        <div class="marker" id="marker"></div>
