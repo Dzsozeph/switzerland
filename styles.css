@@ -1,7 +1,7 @@
 
 	@keyframes slideInLeft {
   from {
-    transform: translateX(-300%);
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
@@ -49,6 +49,7 @@
 		
         }
         aside {
+			position: relative;
             width: 25%;
 			/*
             background: rgba(26,34,23,0.4);*/
@@ -57,7 +58,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(194,197,223,1) 
             color: white;
             padding: 50px;
             overflow-y: auto;
-			animation: slideInLeft 2s ease-out forwards;
+	        animation: slideInLeft ease 2s;
 			
 
         }
@@ -424,6 +425,7 @@ ul li:hover .submenu {
   position: fixed;
   bottom: 0;
   width: 100%; /* Teljes szélesség */
+
 }
 
 .gallery-nav button {
@@ -435,14 +437,14 @@ ul li:hover .submenu {
   margin: 0 100px; /* Térköz a gombok között */
   cursor: pointer;
   border-radius: 5px;
-  right: 23%;
+  right: 23%!important;
   top: -5vh;
 }
 
 h2{
-	position: absolute;
+	position: relative;
 	left: 57%;
-	margin-top: -5vh;
+	top: 90vh;
 
 	
 }
@@ -470,6 +472,6 @@ h2{
 
 .loader-text
 {
-	font-size: 3rem;
-	font-weight: 600
+	font-size: 2rem;
+	font-weight: 200;
 }
