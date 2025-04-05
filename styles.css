@@ -1,15 +1,39 @@
 
-		@keyframes slideInLeft {
-    from {
-        transform: translateX(-300%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+	@keyframes slideInLeft {
+  from {
+    transform: translateX(-300%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(300%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+	}
 		
+.bilbo-regular {
+  font-family: "Bilbo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+	
+}
+
         * {
             margin: 0;
             padding: 0;
@@ -28,13 +52,14 @@
             width: 25%;
 			/*
             background: rgba(26,34,23,0.4);*/
-         background: rgb(214,214,214);
-background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 34%, rgba(162,156,156,1) 62%, rgba(255,255,255,1) 100%);
+         background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(194,197,223,1) 15%, rgba(39,117,140,1) 33%, rgba(39,95,140,1) 55%, rgba(244,245,255,1) 85%, rgba(255,255,255,1) 100%);
             color: white;
             padding: 50px;
             overflow-y: auto;
+			animation: slideInLeft 2s ease-out forwards;
 			
-		
+
         }
         main {
             width: 100vw;
@@ -57,10 +82,11 @@ background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 
 			text-align: center;
 			
 			
+			
         }
         li {
             margin-bottom: 10px;
-				
+	
 			
 			
 			
@@ -68,11 +94,12 @@ background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 
         }
 		
 		h1{
-			
+			font-size: 2.5rem;
 			text-align: center;
 			margin-top: -3vh;
 			text-shadow: 0 0 10px white;
 			color: black;
+			
 			
 			
 		}
@@ -101,7 +128,7 @@ background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 
 			position: relative;
             display: none;
             padding-left: 10px;
-			background: rgba(39,58,85,0.4);
+			background: rgba(39,58,85,0.8);
 			margin-top: 3vh;
 			
         }
@@ -111,11 +138,12 @@ background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 
             cursor: pointer;
             font-weight: bold;
             display: block;
-            padding: 10px;
-         background: rgb(214,214,214);
-background: linear-gradient(167deg, rgba(214,214,214,1) 15%, rgba(24,73,110,1) 40%, rgba(24,73,110,1) 60%, rgba(162,156,156,1) 85%, rgba(255,255,255,1) 100%);;
+            padding: 5px;
+background: rgb(255,255,255);
+background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 20%, rgba(104,149,182,1) 80%, rgba(255,255,255,1) 100%);
             border-radius: 5px;
 			top: 3vh;
+
 			
 		
 			
@@ -151,10 +179,12 @@ background: linear-gradient(167deg, rgba(214,214,214,1) 15%, rgba(24,73,110,1) 4
 			height: 15vh;
 			bottom: -5vh;
 			right: 0;
-			animation: slideInLeft 2s ease-out forwards;
+			animation: slideInRight 2s ease-out forwards;
 		
 			
 		}
+
+
 		
 	.hotspot {
     position: absolute;
@@ -328,7 +358,6 @@ ul li:hover .submenu {
   position: fixed;
   right: 8vw;
   top: 20vh;
-  width: 60vw; /* vagy a kívánt méret */
   height: 70vh;
   display: none;
   border-radius: 8px;
@@ -339,9 +368,109 @@ ul li:hover .submenu {
 
 	
 }
-		
+
+
+.pic-name{
+	position: fixed;
+	color:white;
+	margin-top: 1.5vh;
+	font-size: 1.6rem;
+}
 
 .hover-image2:hover .popup-image2 {
   display: block;
 }
 
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  right: 0; top: 0;
+  width: 80vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.gallery-slide {
+  display: none;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+}
+
+.gallery-slide.active {
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Teljes szélesség */
+}
+
+.gallery-nav button {
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 8px 20px;
+  margin: 0 100px; /* Térköz a gombok között */
+  cursor: pointer;
+  border-radius: 5px;
+  right: 23%;
+  top: -5vh;
+}
+
+h2{
+	position: absolute;
+	left: 57%;
+	margin-top: -5vh;
+
+	
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111; /* vagy bármi más */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 4s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-text
+{
+	font-size: 3rem;
+	font-weight: 100;
+}

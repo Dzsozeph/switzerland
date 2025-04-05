@@ -6,16 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Hind+Mysuru:wght@300;400;500;600;700
-&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Prata&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bilbo&family=Fleur+De+Leah&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <title> Jonas holiday - CH Destinations and Hotels checking lists</title>
 
 </head>
 <body>
-		
+		<div id="preloader">
+  <div class="loader-text noto-serif-font">Loading...</div>
+</div>
     <aside>
-	<h1>Switzerland</h1>
+	<h1 class="bilbo-regular">Switzerland</h1>
 	<div class="logo"></div>
         <ul>
              <li>
@@ -27,7 +30,7 @@
                     <li data-marker="94, 890"><label><input type="checkbox" data-id="1-3"> <span class="days noto-serif-font">Day 5</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;"> Zermatt - Gornergat - Rothorn - Turtmannsee </span></label></li>
                     <li data-marker="625, 486"><label><input type="checkbox" data-id="1-4"> <span class="days noto-serif-font">Day 5</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Grindelwald - Lauterbrunnen</span></label></li>
                     <li data-marker="737, 414"><label><input type="checkbox" data-id="1-5"> <span class="days noto-serif-font">Day 6</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Interlaken - Brienz- Innerkirchen</span></label></li>
-					<li data-marker="950, 271"><label><input type="checkbox" data-id="1-6"> <span class="days noto-serif-font">Day 7</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Pilatus mountain - Isenthal nearby areas</span></label></li>
+					<li data-marker="950, 271"><label><input type="checkbox" data-id="1-6"> <span class="days noto-serif-font">Day 7</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Pilatus mountain - Isenthal </span></label></li>
 					<li data-marker="1270, 380"><label><input type="checkbox" data-id="1-7"> <span class="days noto-serif-font">Day 8</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black; font-style: italic; text-decoration: underline;">Euthal - Wildspitz -Amden</span></label></li>
                 </ul>
             </li>
@@ -79,26 +82,51 @@
                 </ul>
             </li>
             <li>
-                <span class="toggle">Trekking Trails</span>
-                <ul class="submenu">
-					<li class="hover-image2">
-                     <label>
-      <input type="checkbox" data-id="2-1">
-      <span class="days2">May 4</span> Gurten hill <span style="font-weight: 700; color: rgba(24,229,255,1.00); font-style: italic; text-decoration: underline;" class="noto-serif-font; ">Murten</span>
-    </label>
-	 		<div class="popup-background"></div>
-    <img src="gurten.webp" alt="SeePark Hotel" class="popup-image2">
+            <span class="toggle">Trekking Trails</span>
+<ul class="submenu">
+  <li class="hover-image2" onclick="openGallery()">
+	  <div>Gurten Hill</div>
+	  
+   <!--  <label>
+     <input type="checkbox" data-id="2-1">
+      <span class="days2">May 4</span> Gurten hill
+      <span style="font-weight: 700; color: rgba(24,229,255,1.00); font-style: italic; text-decoration: underline;" class="noto-serif-font;">Murten</span>
+    </label>-->
+    <div class="popup-background"></div>
+    
+  </li>
+</ul>
+
 				
+<!-- GALLERY MODAL -->
+<div id="galleryModal" class="gallery-modal">
+  <span class="close" onclick="closeGallery()">&times;</span>
+  <div class="gallery-content">
+    <img src="gurten.webp" class="gallery-slide active">
+	   <img src="gurten1.jpg" class="gallery-slide active">
+	   <img src="gurten2.jpg" class="gallery-slide active">
+	  
+    <div class="gallery-nav">
+		  <h2 class="pic-name">Gurten Hill</h2>
+      <button onclick="prevSlide()">⟵</button>
+      <button onclick="nextSlide()">⟶</button>
+    </div>
+	
+  </div>
+</div>
+				
+				
+
   </li>
                 </ul>
-            </li>
-        </ul>
-		<div class="info"></div>
+  
+		
 		<div class="logo2"></div>
 		<div class="signature"></div>
 		
     </aside>
     <main>
+		<div class="info"></div>
        <div class="marker" id="marker"></div>
     </main>
      <script>
@@ -204,6 +232,44 @@ document.addEventListener("DOMContentLoaded", () => {
         coordDisplay.style.display = "none";
     });
 });
-    </script>
+		 
+		 let currentSlide = 0;
+function openGallery() {
+  document.getElementById("galleryModal").style.display = "flex";
+  showSlide(currentSlide);
+}
+
+function closeGallery() {
+  document.getElementById("galleryModal").style.display = "none";
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".gallery-slide");
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
+}
+
+function prevSlide() {
+  const slides = document.querySelectorAll(".gallery-slide");
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll(".gallery-slide");
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("fade-out");
+
+    // opcionálisan teljes eltávolítás az animáció után
+    setTimeout(() => {
+      preloader.remove();
+    }, 4000); // megegyezik a CSS transition idővel
+  });    </script>
 </body>
 </html>
