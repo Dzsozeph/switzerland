@@ -1,0 +1,347 @@
+
+		@keyframes slideInLeft {
+    from {
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+		
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+			position: relative;
+			
+        }
+        body {
+            display: flex;
+			width: 100vw;
+            height: 100vh;
+		
+        }
+        aside {
+            width: 25%;
+			/*
+            background: rgba(26,34,23,0.4);*/
+         background: rgb(214,214,214);
+background: linear-gradient(162deg, rgba(214,214,214,1) 16%, rgba(30,111,171,1) 34%, rgba(162,156,156,1) 62%, rgba(255,255,255,1) 100%);
+            color: white;
+            padding: 50px;
+            overflow-y: auto;
+			
+		
+        }
+        main {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("switzerlandplan2.PNG");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: solid 4px white;
+			
+		
+			
+        }
+        ul {
+            list-style: none;
+			padding: 20px;
+			text-align: center;
+			
+			
+        }
+        li {
+            margin-bottom: 10px;
+				
+			
+			
+			
+			
+        }
+		
+		h1{
+			
+			text-align: center;
+			margin-top: -3vh;
+			text-shadow: 0 0 10px white;
+			color: black;
+			
+			
+		}
+		
+		checkbox{
+			
+		}
+		.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+		.days{
+			color: rgba(58,185,33,1.00);
+			font-weight: 600;
+			text-shadow: 0 0 6px black;
+		}
+		
+		.days2{
+			color: red;
+			font-weight: 600;
+			text-shadow: 0 0 4px white;
+		}
+        .submenu {
+			position: relative;
+            display: none;
+            padding-left: 10px;
+			background: rgba(39,58,85,0.4);
+			margin-top: 3vh;
+			
+        }
+		
+        .toggle {
+			position: relative;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+         background: rgb(214,214,214);
+background: linear-gradient(167deg, rgba(214,214,214,1) 15%, rgba(24,73,110,1) 40%, rgba(24,73,110,1) 60%, rgba(162,156,156,1) 85%, rgba(255,255,255,1) 100%);;
+            border-radius: 5px;
+			top: 3vh;
+			
+		
+			
+			
+        }
+        .toggle:hover {
+            background: rgba(9,32,85,1.00);
+			
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .marker {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: rgba(208,133,38,0.35);
+            border-radius: 50%;
+			display: none;
+			box-shadow: 0 0 30px white;
+          
+        }
+		
+		.info{
+			position: fixed;
+			display: flex;
+			background-image: url("info2.png");
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			width: 18vw;
+			height: 15vh;
+			bottom: -5vh;
+			right: 0;
+			animation: slideInLeft 2s ease-out forwards;
+		
+			
+		}
+		
+	.hotspot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+       .highlight {
+       background: rgba(26,32,47,1.00);
+	
+
+
+	box-shadow:  0 0 20px white;
+}
+		
+		.logo2{
+			display: flex;
+			position: relative;
+			background-image: url("q.png");
+			background-size: cover;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			width: 300px;
+			height: 100px;
+			bottom: -37vh;
+		}
+		
+		.logo{
+			position: relative;
+			background-image: url("switzlogo.png");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 350px;
+			height: 200px;
+			text-align: center;
+			margin-left: -1.4vw;
+			
+			
+		}
+		
+		.signature{
+			display:flex;
+			position: relative;
+			background-image: url("signature.png");
+			background-size: cover;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			width: 150px;
+			height: 100px;
+			bottom: -32vh;
+			margin: 0 auto;
+			
+
+		}
+		
+.hover-image {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-image {
+  position: fixed;
+  right: 8vw;
+  top: 20vh;
+  width: 60vw; /* vagy a kívánt méret */
+  height: 70vh;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 0 300px black;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+
+	
+}
+		
+
+.hover-image:hover .popup-image {
+  display: block;
+}
+		
+		.submenu {
+    display: none; /* Elrejtjük a submenu-t alapértelmezetten */
+}
+label:hover{
+	background-color: rgba(25,25,39,1.00);
+
+}
+/* Az ul elem hover-jára a submenu láthatóvá válik */
+ul li:hover .submenu {
+    display: block; /* Megjelenítjük a submenu-t */
+	
+}
+		
+.popup-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 2;
+}
+		
+.hover-image:hover .popup-background {
+  display: block;
+}
+		
+		.noto-serif-font {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+		
+		.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+}
+
+.custom-checkbox input {
+  display: none; /* Eredeti checkbox elrejtése */
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Ha be van jelölve */
+.custom-checkbox input:checked + .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Pipa ikon hozzáadása */
+.custom-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+.hover-image2 {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-image2 {
+  position: fixed;
+  right: 8vw;
+  top: 20vh;
+  width: 60vw; /* vagy a kívánt méret */
+  height: 70vh;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 0 300px black;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+
+	
+}
+		
+
+.hover-image2:hover .popup-image2 {
+  display: block;
+}
+
