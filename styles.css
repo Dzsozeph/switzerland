@@ -115,8 +115,10 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(194,197,223,1) 
 		}
 		
 		checkbox{
-			position: fixed;
+			position: relative;
 			left: 0;
+			
+		
 		}
 		.prata-regular {
   font-family: "Prata", serif;
@@ -170,6 +172,7 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
         input[type="checkbox"] {
             margin-right: 15px;
 			transform: scale(1.2);
+			accent-color: #00ff99;
         }
         .marker {
             position: absolute;
@@ -319,7 +322,8 @@ ul li:hover .submenu {
     "wdth" 100;
 }
 		
-		.custom-checkbox {
+		.custom-
+{
   display: flex;
   align-items: center;
   cursor: pointer;
