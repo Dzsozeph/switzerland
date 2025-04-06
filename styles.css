@@ -62,8 +62,8 @@
             width: 25%;
 			/*
             background: rgba(26,34,23,0.4);*/
-         background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(194,197,223,1) 15%, rgba(39,117,140,1) 33%, rgba(39,95,140,1) 55%, rgba(244,245,255,1) 85%, rgba(255,255,255,1) 100%);
+background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(52,51,69,1) 32%, rgba(35,33,55,1) 48%, rgba(255,255,255,1) 84%);
             color: white;
             padding: 50px;
             overflow-y: auto;
