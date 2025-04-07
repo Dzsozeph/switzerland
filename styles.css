@@ -71,7 +71,7 @@
 			/*
             background: rgba(26,34,23,0.4);*/
 background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(29,31,61,1) 32%, rgba(35,33,55,1) 52%, rgba(56,54,74,1) 64%, rgba(85,83,100,1) 72%, rgba(123,122,135,1) 80%, rgba(255,255,255,1) 90%);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(38,53,79,1) 28%, rgba(38,53,79,1) 61%, rgba(113,123,140,1) 71%, rgba(143,151,164,1) 76%, rgba(180,186,194,1) 82%, rgba(218,221,225,1) 86%, rgba(255,255,255,1) 90%);
             color: white;
             padding: 50px;
             overflow-y: auto;
@@ -161,6 +161,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(29,31,61,1) 32%
 			background: rgba(39,58,85,0.8);
 			margin-top: 3vh;
 			transition: all 0.5s ease;
+			box-shadow: 0 0 20px white;
 			
 			
         }
