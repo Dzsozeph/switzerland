@@ -3,9 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bilbo&family=Fleur+De+Leah&display=swap" rel="stylesheet">
@@ -23,13 +20,11 @@
 	<div class="logo"></div>
         <ul>
              <li>
-                <span class="toggle">Planning</span>
+                <span class="toggle" style="text-align: center;">Planning</span>
                 <ul class="submenu">
+					
                     <li data-marker="328, 16"><label><input type="checkbox" data-id="1-1"/>
-						
-						<span class="days bilbo-regular">Day 1</span>  <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg" alt="Belgium Flag" width="20"> BE <span style="font-weight: 700;">Poppel</span> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="Switzerland Flag" width="20"> CH <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black;  text-decoration: underline;"  class="quattrocento-sans-regular city-name">Murten</span></label></li>
-					
-					
+	            	<span class="days bilbo-regular">Day 1</span>  <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Belgium.svg" alt="Belgium Flag" width="20"> BE <span style="font-weight: 700;">Poppel</span> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="Switzerland Flag" width="20"> CH <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black;  text-decoration: underline;" class="quattrocento-sans-regular city-name">Murten</span></label></li>
                     <li data-marker="487, 108"><label><input type="checkbox" data-id="1-2"><span class="days bilbo-regular">Day 2-3</span><span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black;  text-decoration: underline;" class="quattrocento-sans-regular city-name">Brenz </span>  Leukerbad (Spa and Wellness, Therme)</label></li>
 					 <li data-marker="260, 548"><label><input type="checkbox" data-id="1-2"><span class="days bilbo-regular">Day 3</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black;  text-decoration: underline;" class="quattrocento-sans-regular city-name">Leukerbad </span>(Spa and Wellness, Therme)</label></li>
                     <li data-marker="94, 890"><label><input type="checkbox" data-id="1-3"> <span class="days bilbo-regular">Day 5</span> <span style="font-weight: 700; color: rgba(24,229,255,1.00); text-shadow: 0 0 20px black;  text-decoration: underline;" class="quattrocento-sans-regular city-name"> Zermatt - Gornergat - Rothorn - Turtmannsee </span></label></li>
@@ -40,7 +35,7 @@
                 </ul>
             </li>
               <li>
-                <span class="toggle">Accomodations</span>
+                <span class="toggle" style="text-align: center;">Accomodations</span>
                 <ul class="submenu">
 					
 					
@@ -87,84 +82,32 @@
                 </ul>
             </li>
             <li>
-            <span class="toggle">Trekking Trails</span>
+            <span class="toggle" style="text-align: center;">Trekking Trails</span>
 <ul class="submenu">
-  <li class="hover-image2" onclick="openGallery()">
-	  <div class="bilbo-regular" style="font-size: 2rem; cursor: pointer;">Pictures</div>
-	  
+	  <div class="" style="">
+	  <div class="gallery-toggle bilbo-regular" style="font-size: 2rem; cursor: pointer; text-align: center;" onclick="openGallery()">Pictures</div>
+
+<div class="gallery-modal" id="galleryModal">
+  <div class="gallery-content">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    
+    <img id="galleryImage" src="file:///G|/GIT_HUB/switzerland/asd" alt="sad">
+    <div class="caption" id="galleryCaption"></div>
+    
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+</div>
+	</div>
    <!--  <label>
      <input type="checkbox" data-id="2-1">
       <span class="days2">May 4</span> Gurten hill
       <span style="font-weight: 700; color: rgba(24,229,255,1.00); font-style: italic; text-decoration: underline;" class="noto-serif-font;">Murten</span>
     </label>-->
-    <div class="popup-background"></div>
-    
-  </li>
-</ul>
-
-				
-<!-- GALLERY MODAL -->
-<div id="galleryModal" class="gallery-modal">
-  <span class="close" onclick="closeGallery()">&times;</span>
-  <div class="gallery-content">
-	  <div class="gallery-item">
-      <img src="gurten.webp" class="gallery-slide">
-	   <img src="gurten1.jpg" class="gallery-slide">
-	   <img src="gurten2.jpg" class="gallery-slide">
-		
-		
-	   </div>
-	  <div class="gallery-item">
-	   <img src="leukerbad.jpg" class="gallery-slide">
-	   <img src="leukerbad2.jpg" class="gallery-slide">
-       <img src="leukerbad3.jpg" class="gallery-slide">
-	   <img src="leukerbad4.webp" class="gallery-slide">
-	   <img src="leukerbad5.webp" class="gallery-slide">
-		  
-	</div>
-		   <div class="gallery-item">
-	   <img src="stockhorn1.jpeg" class="gallery-slide">
-	   <img src="stockhorn2.jpg" class="gallery-slide ">
-	   <img src="stockhorn3.jpg" class="gallery-slide">
-			   
-			   	</div>
-	  
-	   <img src="zermatt.jpg" class="gallery-slide active">
-	   <img src="zermatt2.jpg" class="gallery-slide active">
-	   <img src="zermatt3.jpg" class="gallery-slide active">
-	   <img src="turtmannsee.jpg" class="gallery-slide active">
-	   <img src="lauterbrunnen.jpg" class="gallery-slide active">
-	   <img src="lauterbrunnen2.jpg" class="gallery-slide active">
-	   <img src="grindelwald.jpeg" class="gallery-slide active">
-	  <img src="grindelwald2.jpg" class="gallery-slide active">
-	   <img src="grindelwald3.webp" class="gallery-slide active">
-	   <img src="grindelwald4.jpg" class="gallery-slide active">
-	   <img src="brienz.jpg" class="gallery-slide active">
-	   <img src="brienz1.webp" class="gallery-slide active">
-	  <img src="brienz2.jpg" class="gallery-slide active">
-	  
-	  
-	  
-	  	   <img src="niessen.jpg" class="gallery-slide active">
-	   <img src="niessen2.webp" class="gallery-slide active">
-	   <img src="niessen3.webp" class="gallery-slide active">
-	   <img src="pilatus.webp" class="gallery-slide active">
-	   <img src="pilatus2.webp" class="gallery-slide active">
-	  <img src="pilatus3.webp" class="gallery-slide active">
-
-	  
-	   <div class="gallery-nav">
-		    <h2 class="pic-name"></h2>
-      <button onclick="prevSlide()">⟵</button>
-      <button onclick="nextSlide()">⟶</button>
-		    
-  </div>
-	
-  </div>
-</div>
-  </li>
-                </ul>
   
+                  </ul>
+            </li>
+		</ul>
 		
 		<div class="logo2"></div>
 		<div class="signature"></div>
@@ -278,35 +221,72 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 		 
-		 let currentSlide = 0;
-function openGallery() {
-  document.getElementById("galleryModal").style.display = "flex";
-  showSlide(currentSlide);
-}
+		 
+  const images = [
+    { src: 'gurten.webp', caption: 'Day 1, Gurten hill' },
+    { src: 'gurten1.jpg', caption: 'Day 1, Gurten hill' },
+    { src: 'gurten2.jpg', caption: 'Day 1, Gurten hill' },
+	{ src: 'niessen2.webp', caption: 'Day 1, Niesen' },
+	{ src: 'niessen3.webp', caption: 'Day 1, Niesen' },
+	{ src: 'leukerbad.jpg', caption: 'Day 2-3, Leukerbad (Spa and Therme)' },
+    { src: 'leukerbad2.jpg', caption: 'Day 2-3, Leukerbad (Spa and Therme)' },
+    { src: 'leukerbad3.jpg', caption: 'Day 2-3, Leukerbad (Spa and Therme)' },
+	{ src: 'leukerbad4.webp', caption: 'Day 2-3, Leukerbad (Spa and Therme)' },
+    { src: 'turtmannsee.jpg', caption: 'Day 5, Turtmannsee' },
+    { src: 'zermatt.jpg', caption: 'Day 5, Zermatt' },
+    { src: 'zermatt2.jpg', caption: 'Day 5, Zermatt' },
+	{ src: 'zermatt3.jpg', caption: 'Day 5, Zermatt' },
+    { src: 'stockhorn1.jpeg', caption: 'Day 4, Stockhorn' },
+	{ src: 'stockhorn2.jpg', caption: 'Day 4, Stockhorn' },
+    { src: 'stockhorn3.jpg', caption: 'Day 4, Stockhorn' },
+	{ src: 'grindelwald.jpeg', caption: 'Day 5, Grindelwald' },
+    { src: 'grindelwald2.jpg', caption: 'Day 5, Grindelwald' },
+	{ src: 'grindelwald3.webp', caption: 'Day 5, Grindelwald' },
+	{ src: 'grindelwald4.jpg', caption: 'Day 5, Grindelwald' },
+    { src: 'lauterbrunnen.jpg', caption: 'Day 5, Lauterbrunnen' },
+    { src: 'lauterbrunnen.jpg', caption: 'Day 5, Lauterbrunnen' },
+    { src: 'brienz.jpg', caption: 'Day 6, Brienz' },
+	{ src: 'brienz2.jpg', caption: 'Day 6, Brienz' },
+    { src: 'brienz1.webp', caption: 'Day 6, Brienz' },
+	{ src: 'pilatus3.webp', caption: 'Day 6, Brienz' },
+    { src: 'pilatus.webp', caption: 'Day 7, Pilatus' },
+    { src: 'pilatus3.webp', caption: 'Day 7, Pilatus' },
+    { src: 'pilatus2.webp', caption: 'Day 7, Pilatus' },
+ 
+	  
+  ];
 
-function closeGallery() {
-  document.getElementById("galleryModal").style.display = "none";
-}
+  let currentIndex = 0;
 
-function showSlide(index) {
-  const slides = document.querySelectorAll(".gallery-slide");
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) slide.classList.add("active");
-  });
-}
+  function openGallery() {
+    document.getElementById('galleryModal').style.display = 'flex';
+    showSlide(currentIndex);
+  }
 
-function prevSlide() {
-  const slides = document.querySelectorAll(".gallery-slide");
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-}
+  function closeGallery() {
+    document.getElementById('galleryModal').style.display = 'none';
+  }
 
-function nextSlide() {
-  const slides = document.querySelectorAll(".gallery-slide");
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
+  function changeSlide(n) {
+    currentIndex += n;
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+    showSlide(currentIndex);
+  }
+
+  function showSlide(index) {
+    const img = document.getElementById('galleryImage');
+    const caption = document.getElementById('galleryCaption');
+    img.src = images[index].src;
+    caption.textContent = images[index].caption;
+  }		 
+		 
+		 
+		 
+		 
+		 
+		 
+ let currentSlide = 0;
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
     preloader.classList.add("fade-out");

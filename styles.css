@@ -30,6 +30,13 @@
 	font-size:1.0rem;
 	font-style: italic;
 }
+
+.city-name:hover{
+  text-shadow: 0 0 30px rgba(24,229,255,1);
+  cursor: pointer;
+  
+	
+}
 .bilbo-regular {
   font-family: "Bilbo", cursive;
   font-weight: 400;
@@ -50,6 +57,7 @@
             font-family: Arial, sans-serif;
 			position: relative;
 			
+			
         }
         body {
             display: flex;
@@ -63,11 +71,12 @@
 			/*
             background: rgba(26,34,23,0.4);*/
 background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(52,51,69,1) 32%, rgba(35,33,55,1) 48%, rgba(255,255,255,1) 84%);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(29,31,61,1) 32%, rgba(35,33,55,1) 52%, rgba(56,54,74,1) 64%, rgba(85,83,100,1) 72%, rgba(123,122,135,1) 80%, rgba(255,255,255,1) 90%);
             color: white;
             padding: 50px;
             overflow-y: auto;
 	        animation: slideInLeft ease 2s;
+			
 			
 
         }
@@ -89,13 +98,17 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(52,51,69,1) 32%
         ul {
             list-style: none;
 			padding: 20px;
-			text-align: center;
+			transition: all 0.5s ease;
+			
 			
 			
 			
         }
         li {
             margin-bottom: 10px;
+			transition: all 0.5s ease;
+			
+	
 	
 	
 			
@@ -147,6 +160,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(52,51,69,1) 32%
             padding-left: 10px;
 			background: rgba(39,58,85,0.8);
 			margin-top: 3vh;
+			transition: all 0.5s ease;
+			border-radius: 20px;
 			
         }
 		
@@ -160,26 +175,41 @@ background: rgb(255,255,255);
 background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 20%, rgba(104,149,182,1) 80%, rgba(255,255,255,1) 100%);
             border-radius: 5px;
 			top: 3vh;
+			transition: all 0.5s ease;
 
-			
-		
-			
-			
         }
         .toggle:hover {
-            background: rgba(9,32,85,1.00);
+            background: rgba(130,19,21,1.00);
+			
+		
+		
 			
         }
-        input[type="checkbox"] {
-            margin-right: 15px;
-			transform: scale(1.2);
-			accent-color: #00ff99;
-        }
+       input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  color: rgba(24,229,255,1);
+  font-weight: bold;
+  position: absolute;
+  left: 3px;
+  top: -2px;
+}
         .marker {
             position: absolute;
             width: 70px;
             height: 70px;
-            background: rgba(208,133,38,0.35);
+            background: rgba(208,133,38,0.6);
             border-radius: 50%;
 			display: none;
 			box-shadow: 0 0 30px white;
@@ -214,10 +244,9 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
 }
        .highlight {
        background: rgba(26,32,47,1.00);
-	
-
-
-	box-shadow:  0 0 20px white;
+	   border-bottom: solid 3px white;
+	   box-shadow: 20px 0 0 sandybrown;
+	   
 }
 		
 		.logo2{
@@ -277,6 +306,9 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
   z-index: 2;
   background-size: cover;
   background-position: center;
+  transform: scale(0.9);
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
 
 	
 }
@@ -284,18 +316,24 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
 
 .hover-image:hover .popup-image {
   display: block;
+  opacity: 1;
+  transform: scale(1.2);
+  pointer-events: auto;
 }
 		
-		.submenu {
-    display: none; /* Elrejtjük a submenu-t alapértelmezetten */
-}
+
 label:hover{
 	background-color: rgba(25,25,39,1.00);
+   transition: all 0.5s ease;
+	font-size: 1.06rem;
+	
 
 }
 /* Az ul elem hover-jára a submenu láthatóvá válik */
 ul li:hover .submenu {
     display: block; /* Megjelenítjük a submenu-t */
+	transition: all 0.3s ease;
+	
 	
 }
 		
@@ -400,14 +438,19 @@ ul li:hover .submenu {
   display: block;
 }
 
+.gallery-toggle {
+  color: white;
+
+}
+
 .gallery-modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  right: 0; top: 0;
-  width: 80vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.8);
+  top: 0;
+  right: 0;
+  width: 80vw; height: 100vh;
+  background-color: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
 }
@@ -415,50 +458,44 @@ ul li:hover .submenu {
 .gallery-content {
   position: relative;
   max-width: 80%;
-  max-height: 80%;
+  text-align: center;
 }
 
-.gallery-slide {
-  display: none;
+.gallery-content img {
   max-width: 100%;
-  max-height: 80vh;
-  margin: 0 auto;
+  height: auto;
+  border-radius: 10px;
 }
 
-.gallery-slide.active {
-  display: block;
+.caption {
+  margin-top: 12px;
+  color: white;
+  font-size: 18px;
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 35px;
-  font-size: 2rem;
+  top: 10px; right: 20px;
   color: white;
+  font-size: 30px;
   cursor: pointer;
+  z-index: 1;
 }
 
-.gallery-nav {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%; /* Teljes szélesség */
-
-}
-
-.gallery-nav button {
-  background-color: rgba(255,255,255,0.1);
-  color: white;
-  font-size: 1.5rem;
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
   border: none;
-  padding: 8px 20px;
-  margin: 0 100px; /* Térköz a gombok között */
+  font-size: 40px;
+  color: white;
   cursor: pointer;
-  border-radius: 5px;
-  right: 23%!important;
-  top: -5vh;
 }
+
+.prev { left: -50px; }
+.next { right: -50px; }
+
 
 h2{
 	position: relative;
