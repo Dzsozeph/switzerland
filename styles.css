@@ -103,10 +103,12 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(123,133,148,1) 
 			
 			
 			
+			
         }
         li {
             margin-bottom: 10px;
 			transition: all 0.5s ease;
+			
 			
 	
 	
@@ -177,6 +179,7 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
             border-radius: 5px;
 			top: 3vh;
 			transition: all 0.5s ease;
+			box-shadow: 0 1px 5px #00ec3b;
 
         }
         .toggle:hover {
