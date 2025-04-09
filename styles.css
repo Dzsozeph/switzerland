@@ -179,7 +179,7 @@ background: linear-gradient(315deg, rgba(255,255,255,1) 0%, rgba(104,149,182,1) 
             border-radius: 5px;
 			top: 3vh;
 			transition: all 0.5s ease;
-			box-shadow: 0 1px 5px #00ec3b;
+			box-shadow: 0 5px 0 white;
 
         }
         .toggle:hover {
